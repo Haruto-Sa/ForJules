@@ -1,0 +1,41 @@
+{
+  "name": "forjules",
+  "version": "1.0.0",
+  "description": "AI-powered personal fashion assistant",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run start",
+    "lint": "cd frontend && npm run lint",
+    "type-check": "cd frontend && npm run type-check",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && go mod tidy && cd ../cvml && pip install -r requirements.txt",
+    "clean": "rmdir /s /q node_modules frontend\\node_modules frontend\\.next backend\\go.sum 2>nul & echo クリーンアップ完了",
+    "backend:dev": "cd backend && go run main.go",
+    "cvml:dev": "cd cvml && python analyze.py",
+    "test:backend": "cd backend && go test ./...",
+    "test:frontend": "cd frontend && npm test",
+    "db:init": "cd backend && go run -tags init main.go"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "ForJules Team",
+  "license": "MIT",
+  "keywords": [
+    "fashion",
+    "ai",
+    "wardrobe",
+    "style",
+    "outfit",
+    "nextjs",
+    "go",
+    "python"
+  ]
+} 
